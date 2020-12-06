@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, FlatList, Text} from 'react-native';
+import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
+import ListItem from './components/ListItem';
+import Additem from './components/Additem'
 
 const App = () => {
   
@@ -11,13 +13,30 @@ const App = () => {
     {id: 4, text: 'Fruits'},
   ])
 
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id)
+    })
+  }
+
+  const addItem = (text) => {
+    if (!text) {
+      Alert.alert('Error', 'please enter something', [{text: 'Ok'}])
+    }
+    else {
+      setItems(prevItems => {
+        return [...prevItems, {id: 5, text}]
+      })
+    }
+  }
+
   return (
     <View style={styles.container}>   
       <Header />
+      <Additem addItem={addItem} />
       <FlatList 
         data= {items}
-        renderItem={({item}) => (<Text>{item.text}</Text>)}
-      />
+        renderItem={({item}) => <ListItem  item={item} deleteItem={deleteItem}/>}/>
     </View>
   );
 };
