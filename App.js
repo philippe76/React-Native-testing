@@ -26,7 +26,7 @@ const App = () => {
     }
     else {
       setItems(prevItems => {
-        return [...prevItems, {id: 5, text}]
+        return [...prevItems, {id: uuid.v4(), text}]
       })
     }
   }

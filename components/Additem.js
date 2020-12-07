@@ -9,9 +9,6 @@ const Additem = ({title, addItem}) => {
 
     const onChange = textValue => setText(textValue)
 
-
-
-
     return (
         <View>
             <TextInput placeholder="Add item..." style={styles.input} onChangeText={onChange}/>
