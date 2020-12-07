@@ -11,3 +11,7 @@
 <br/>
 
 Thx to [Traversy Media](https://www.youtube.com/watch?v=Hf4MJH0jDb4) 😉
+
+<br />
+
+<img src='./assets/shoppingLIst.PNG'>
