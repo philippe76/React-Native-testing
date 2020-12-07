@@ -3,14 +3,15 @@ import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
 import ListItem from './components/ListItem';
 import Additem from './components/Additem'
+import uuid from 'react-native-uuid'
 
 const App = () => {
   
   const [items, setItems] = useState([
-    {id: 1, text: 'Milk'},
-    {id: 2, text: 'Eggs'},
-    {id: 3, text: 'Bread'},
-    {id: 4, text: 'Fruits'},
+    {id: uuid.v4(), text: 'Milk'},
+    {id: uuid.v4(), text: 'Eggs'},
+    {id: uuid.v4(), text: 'Bread'},
+    {id: uuid.v4(), text: 'Fruits'},
   ])
 
   const deleteItem = id => {
